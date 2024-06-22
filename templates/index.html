@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'business:create' %}"><button type="button">New Business</button></a>
+<ol>
+            
+    {% for i in all %}
+    
+    <li>
+        <a href="{% url 'business:get_transaction' i.id %}">{{i.name}}</a> - created on {{i.start_date}}  
+    </li>
+    {% endfor %}
+
+</ol>
+
+{% endblock  %}

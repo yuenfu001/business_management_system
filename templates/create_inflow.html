@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<a class="btn btn-outline-primary" href="{% url 'business:view_expenditure' pk=expenditure.transaction.pk %}">Back</a>
+<a class="btn btn-outline-danger">{{expenditure.purchased_item}}- Transaction</a> <br>
+
+
+<br>
+ <form action="" method="post">
+    {% csrf_token %}
+    {{form|crispy}} <br>
+    <input class="btn btn-outline-primary" type="submit" value="Create" />
+ </form>
+{% endblock %}
+  

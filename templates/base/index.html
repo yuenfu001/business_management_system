@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<style>
+  /* Customize the font and color for the links */
+  .custom-link {
+    font-family: Matura MT Script Capitals; /* Change to your desired font */
+    color: green; /* Change to your desired color */
+  }
+</style>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">INVESTORS</h1>
+        <h2 class="card-text"><a href="" class="text-decoration-none custom-link">{{truckinfo}}</a></h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">BUSINESSES</h1>
+        <h2 class="card-text"><a href="" class="text-decoration-none custom-link">{{driverinfo}}</a></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">ORDERS</h1>
+        <h2 class="card-text">Company Orders : <a href="" class="text-decoration-none custom-link">{{corder}}</a></h2>
+        <h2 class="card-text">Individual Orders : <a href="" class="text-decoration-none custom-link">{{iorder}}</a></h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">TRIP</h1>
+        <h2 class="card-text">Company Trips : <a href="" class="text-decoration-none custom-link">{{ctrips}}</a></h2>
+        <h2 class="card-text">Individual Trips : <a href="" class="text-decoration-none custom-link">{{itrips}}</a></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

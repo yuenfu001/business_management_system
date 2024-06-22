@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+        {{form|crispy}} <br>
+    <input class="btn btn-outline-primary" type="submit" value="Create" />
+</form>
+
+{% endblock  %}

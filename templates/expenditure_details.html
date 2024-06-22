@@ -1,0 +1,52 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+{% include "base/cnavbar.html" %}
+  <style>
+    .table td,
+        .table th {
+            font-size: 10px; /* Adjust the font size as needed */
+        }
+    </style>
+  
+  <div class="table responsive">
+      
+    <br>
+  <table class = 'table table-bordered table-striped'>
+   <thead class = 'table-light'>
+       <tr>
+       <th class = "text-center">S/N</th>
+       <th class = "text-center">PURCHASED ITEM</th>
+       <th class = "text-center">QUANTITY</th>
+       <th class = "text-center">UNIT COST</th>
+       <th class = "text-center">QUANTITY LEFT</th>
+       <th class = "text-center">TOTAL COST</th>
+       <th class = "text-center">SELL</th>
+       <!-- if request.user.is_superuser -->
+       
+       <th class = "text-center">DELETE</th>
+       <!-- endif -->
+       </tr>
+   </thead>
+   
+   {% for j in get %}
+   
+   <tr>
+       <td class = "text-center">{{ forloop.counter }}</td>
+       <td class = "text-center"><a href="">{{j.purchased_item|upper}}</a></td>
+       <td class = "text-center">{{j.purchased_quantity}}</td>
+       <td class = "text-center">{{j.COG}}</td>
+       <td class = "text-center">{{j.quantity_left}}</td>
+       <td class = "text-center">{{j.total_amount}}</td>
+       <td class = "text-center"><a href="{% url 'business:create_inflow' j.id %}">sell</a></td>
+       <!-- if request.user.is_superuser -->
+       <td class = "text-center"><a href=""><img src="{% static 'img/del.jpg' %}" height= "20" width="20"></a></td>
+   <!-- endif -->
+   </tr>
+   {%endfor%}
+   
+   </table>
+   
+  </div>
+{% endblock %}

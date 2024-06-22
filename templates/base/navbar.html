@@ -1,0 +1,61 @@
+{% load static %}
+<nav class="navbar fixed-top navbar-expand-sm navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'business:index' %}"><img src="{% static 'img/barbados.svg' %}" width="100" height="100"><a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {% comment %} <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse"> {% endcomment %}
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+      <!-- if user.is_staff -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Investors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'business:create' %}">Business</a>
+          </li> 
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="#">Consignment</a>
+          </li>  {% endcomment %}
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="#">Add Category</a>
+          </li> {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Make an Order
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="">Company</a></li>
+              {% comment %} <li><a class="dropdown-item" href="">Individual</a></li> {% endcomment %}
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="">Individual</a></li>
+            </ul>
+          </li>
+            <!-- if user.is_superuser -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Users</a>
+            </li>
+            <!-- endif -->
+        </ul>
+        
+           <!-- endif -->
+        <ul class="navbar-nav ml-auto">
+
+          <!-- if request.user.is_authenticated -->
+          
+          <li class="nav-item">
+            <a class="nav-link" href=""><button class= 'btn btn-danger'> Logout</button></a>
+          </li>
+          
+          </ul> 
+          <!-- endif -->
+      </div>
+    </div>
+  </nav>
+  
+    
+       
+  
